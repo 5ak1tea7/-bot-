@@ -29,8 +29,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.author == client.user: return
-    if message.content == 'ping':
-        await message.channel.send('pong!')
+    if message.content == 'いよりちゃーん？':
+        await message.channel.send('うあ！わらわは生きておるぞ！')
 
 # Flaskを起動
 keep_alive()
