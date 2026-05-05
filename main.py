@@ -29,8 +29,23 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.author == client.user: return
+# Ping送信
     if message.content == 'いよりちゃーん？':
         await message.channel.send('うあ！わらわは生きておるぞ！')
+#　性癖ガチャ
+    elif message.content == 'せいへきがちゃ':
+        import random
+        seiheki = random.randint(1,3)
+        if seiheki == 1:
+            await message.channel.send('もしかして...わらわか？(1)')
+        else:
+            if seiheki == 2:
+                await message.channel.send('あーっ...お主、ロリ好きじゃろ。(2)')
+            else:
+                if seiheki == 3:
+                    await message.channel.send('お主...ふたなりが好きなのか？(3)')
+                else:
+                    await message.channel.send('おかしいのう...こんなの知らんわい...(Err:存在しない出目です。)')
 
 # Flaskを起動
 keep_alive()
