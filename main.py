@@ -1,5 +1,22 @@
 import discord
 import os
+from flask import Flask
+from threading import Thread
+
+# --- Flaskで簡単なWebページを作る ---
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is alive!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+# ------------------------------
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -11,10 +28,11 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
-        return
+    if message.author == client.user: return
     if message.content == 'ping':
         await message.channel.send('pong!')
 
-# Railwayの設定画面で入力する「TOKEN」を読み込む
+# Flaskを起動
+keep_alive()
+# Botを起動
 client.run(os.getenv('DISCORD_TOKEN'))
