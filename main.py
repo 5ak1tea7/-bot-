@@ -17,4 +17,4 @@ async def on_message(message):
         await message.channel.send('pong!')
 
 # Railwayの設定画面で入力する「TOKEN」を読み込む
-client.run(os.getenv('MTUwMTE4NTYyMjg4MTM0MTU2Mg.GEDsrz.zhk2pZd69P_-o6aorBSCqEhIIAMxRDrmB6l890'))
+client.run(os.getenv('DISCORD_TOKEN'))
