@@ -46,8 +46,13 @@ async def on_message(message):
                     await message.channel.send('お主...ふたなりが好きなのか？(3)')
                 else:
                     await message.channel.send('おかしいのう...こんなの知らんわい...(Err:存在しない出目です。)')
-
-# Flaskを起動
-keep_alive()
-# Botを起動
-client.run(os.getenv('DISCORD_TOKEN'))
+# Flask（Webサーバー）を別スレッドで起動
+if __name__ == "__main__":
+    keep_alive()
+    
+    # トークンがない場合にエラーを出すようにする
+    token = os.getenv('DISCORD_TOKEN')
+    if token is None:
+        print("ERROR: DISCORD_TOKEN is not set in Environment Variables!")
+    else:
+        client.run(token)
