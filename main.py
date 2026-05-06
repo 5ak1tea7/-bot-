@@ -59,14 +59,12 @@ async def on_message(message):
         seiheki = random.randint(1,3)
         if seiheki == 1:
             await message.channel.send('もしかして...わらわか？(1)')
+        elif seiheki == 2:
+            await message.channel.send('あーっ...お主、ロリ好きじゃろ。(2)')
+        elif seiheki == 3:
+            await message.channel.send('お主...ふたなりが好きなのか？(3)')
         else:
-            if seiheki == 2:
-                await message.channel.send('あーっ...お主、ロリ好きじゃろ。(2)')
-            else:
-                if seiheki == 3:
-                    await message.channel.send('お主...ふたなりが好きなのか？(3)')
-                else:
-                    await message.channel.send('おかしいのう...こんなの知らんわい...(Err:存在しない出目です。)')
+            await message.channel.send('おかしいのう...こんなの知らんわい...(Err:存在しない出目です。)')
 #↑ここまで弄ってOKゾーン↑
 
 
