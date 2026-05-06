@@ -1,5 +1,7 @@
 import discord
 import os
+import time
+import requests
 from flask import Flask
 from threading import Thread
 
@@ -9,9 +11,6 @@ app = Flask('')
 @app.route('/')
 
 # 5分おきに起こす奴
-import time
-import requests
-
 def ping_self():
     while True:
         try:
