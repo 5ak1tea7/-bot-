@@ -54,18 +54,6 @@ async def on_message(message):
     if message.content == 'いよりちゃーん？':
         await message.channel.send('うあ！わらわは生きておるぞ！')
 #　性癖ガチャ
-# 出目追加方法
-#　1,randintの最大値を変更する
-# 2,最後のelse(エラー出目)のawaitの行を範囲選択し、次の行にコピペする。
-# ここにコピペ
-# 3,一番デカい出目から、以下の構文をコピーする。(elseの後の:の上にawaitのaが来るように)
-'''
-if seiheki == N:
-    await message.channel.send('')
-else:
-'''
-# 4,オリジナルの出目を作る
-# 5,エラー出目をelseの:の下にawaitの1文字目のaが来るように貼りなおす。
     elif message.content == 'せいへきがちゃ':
         import random
         seiheki = random.randint(1,3)
