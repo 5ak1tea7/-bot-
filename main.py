@@ -7,6 +7,23 @@ from threading import Thread
 app = Flask('')
 
 @app.route('/')
+
+# 5分おきに起こす奴
+import time
+import requests
+
+def ping_self():
+    while True:
+        try:
+            requests.get("https://iyorichiyan.onrender.com")
+        except:
+            pass
+        time.sleep(300)
+
+def start_ping():
+    t = Thread(target=ping_self)
+    t.start()
+
 def home():
     return "Bot is alive!"
 
